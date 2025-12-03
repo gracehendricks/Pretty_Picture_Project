@@ -279,10 +279,10 @@ def newton_raphson(data_frame, x_0, b_0, max_iter, tol):
     clock_biases.append(b_est)
     timestamps_proc.append(t)
 
-    if converged_epoch:
-      print(f"Epoch {t} converged after {it+1} iterations, Δx = {del_x}, Δb = {del_bu}")
-    else:
-      print(f"Epoch {t} did NOT converge after {max_iter} iterations, last Δx = {del_x}, Δb = {del_bu}")
+    # if converged_epoch:
+    #   print(f"Epoch {t} converged after {it+1} iterations, Δx = {del_x}, Δb = {del_bu}")
+    # else:
+    #   print(f"Epoch {t} did NOT converge after {max_iter} iterations, last Δx = {del_x}, Δb = {del_bu}")
 
 
   positions = np.array(positions)
@@ -482,14 +482,14 @@ def snapshot(data_frame, x_0, b_0, max_iter, tol, el_cutoff, cn0_min, weight):
                 break
 
             sv_pos_masked = sv_pos[el_mask]
-            sv_pos_orig_masked = sv_pos_orig[el_mask]
+            # sv_pos_orig_masked = sv_pos_orig[el_mask]
             rho_meas_masked = rho_meas[el_mask]
             cn0_dbhz_masked = cn0_dbhz[el_mask]
             cn0_dbhz_masked = np.array(cn0_dbhz_masked)
-            gnss_ids_masked = gnss_ids[el_mask]
+            # gnss_ids_masked = gnss_ids[el_mask]
             sv_el_masked = sv_el[el_mask]
-            sv_az_masked = sv_az[el_mask]
-            gps_millis_masked = gps_millis[el_mask]
+            # sv_az_masked = sv_az[el_mask]
+            # gps_millis_masked = gps_millis[el_mask]
             sig_type_masked = sig_type[el_mask]
             sig_type_masked = np.array(sig_type_masked.astype(str))
             sig_type_masked = np.char.lower(sig_type_masked)
